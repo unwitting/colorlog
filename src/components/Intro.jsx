@@ -17,6 +17,7 @@ export default function Intro(props) {
         , to journal, simply to remember.
       </p>
       <p className={css.paragraph}>Just a set of colors, and a little description of each, to bring everything flooding back.</p>
+      <p className={`${css.paragraph} ${css.fade}`}>Made with love by Jack Preston <Link external={true} href='https://twitter.com/unwttng'>@unwttng</Link></p>
     </div>
   )
 }
