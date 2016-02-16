@@ -23,7 +23,7 @@ class PaletteText extends React.Component {
 
   onRestart() {
     const loc = window.location
-    window.location.href = `${loc.protocol}//${loc.hostname}${loc.pathname}`
+    window.location.href = `${loc.protocol}//${loc.hostname}${!!loc.port ? ':' + loc.port : ''}${loc.pathname}`
   }
 
   onTextChange(e) {
@@ -62,16 +62,18 @@ class PaletteText extends React.Component {
   }
 
   renderViewer() {
+    const loc = window.location
+    const home = `${loc.protocol}//${loc.hostname}${!!loc.port ? ':' + loc.port : ''}${loc.pathname}`
     return (
       <div className={css.paletteText}>
         {this.state.text}
         {this.state.user && this.state.user.length > 0 ?
           <span>
-            <span className={css.by}>, a <Link href='/'>Colorlog</Link> by </span>
+            <span className={css.by}>, a <Link href={home}>Colorlog</Link> by </span>
             <Link external={true} href={`https://twitter.com/${this.state.user}`}>@{this.state.user}</Link>
           </span>
         :
-          <span className={css.by}>, a <Link href='/'>Colorlog</Link></span>
+          <span className={css.by}>, a <Link highlight={true} href={home}>Colorlog</Link></span>
         }
       </div>
     )
