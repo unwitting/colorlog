@@ -13,7 +13,7 @@ export default function Intro(props) {
     <div className={css.intro}>
       <p className={`${css.paragraph} ${css.title}`}>Welcome to Colorlog</p>
       <p className={css.paragraph}>
-        A new way to <Link highlight={true} href={`/?data=${TRAVEL_LOG}`}>travel log</Link>
+        A new way to <Link highlight={true} href={`?data=${TRAVEL_LOG}`}>travel log</Link>
         , to journal, simply to remember.
       </p>
       <p className={css.paragraph}>Just a set of colors, and a little description of each, to bring everything flooding back.</p>
