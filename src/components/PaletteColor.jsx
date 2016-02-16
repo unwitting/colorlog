@@ -3,9 +3,10 @@ import React from 'react'
 import css from './PaletteColor.css'
 
 export default function PaletteColor(props) {
+  const hasText = !!props.text && props.text.length > 0
   return (
     <div className={css.paletteColor} style={{backgroundColor: `#${props.hex}`}}>
-      <span className={css.text}>{props.text}</span>
+      {hasText ? <span className={css.text}>{props.text}</span> : null}
     </div>
   )
 }
