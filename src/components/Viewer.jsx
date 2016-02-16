@@ -5,22 +5,13 @@ import PaletteText from './PaletteText.jsx'
 
 import css from './Viewer.css'
 
-class Viewer extends React.Component {
+export default function Viewer(props) {
 
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
-
-  render() {
-    return (
-      <div className={css.viewer}>
-        <Palette colors={this.props.colors} />
-        <PaletteText text={this.props.text} user={this.props.user} />
-      </div>
-    )
-  }
+  return (
+    <div className={css.viewer}>
+      <Palette colors={props.colors} />
+      <PaletteText text={props.text} user={props.user} />
+    </div>
+  )
 
 }
-
-export default Viewer
