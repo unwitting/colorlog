@@ -1,0 +1,7 @@
+.link {
+  text-decoration: none;
+  color: inherit;
+  padding-bottom: 3px;
+  padding-right: 2em;
+  border-bottom: 1px solid currentColor;
+}
