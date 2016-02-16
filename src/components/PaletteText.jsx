@@ -22,7 +22,8 @@ class PaletteText extends React.Component {
   }
 
   onRestart() {
-    window.location.href = '/'
+    const loc = window.location
+    window.location.href = `${loc.protocol}//${loc.hostname}${loc.pathname}`
   }
 
   onTextChange(e) {
