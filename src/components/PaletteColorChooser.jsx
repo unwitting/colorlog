@@ -70,7 +70,13 @@ class PaletteColorChooser extends React.Component {
             onChange={this.onTextChange.bind(this)} />
         </div>
         <div className={css.inputWrapper}>
-          <button disabled={!hasValidColor} className={css.saveButton} onClick={this.onSave.bind(this)}>+</button>
+          {hasValidColor ?
+          <button
+            className={css.saveButton}
+            onClick={this.onSave.bind(this)}>
+            +
+          </button>
+          : null}
         </div>
       </div>
     )

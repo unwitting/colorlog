@@ -4,7 +4,8 @@
   "description": "Memories in color",
   "scripts": {
     "dev": "webpack -d --watch",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "deployprod": "npm run build && cp build/bundle.js build/bundle.js.prod && git checkout gh-pages && mv build/bundle.js.prod build/bundle.js && git add build/bundle.js && git commit -m \"Updating build bundle\" && git push origin gh-pages && git checkout master"
   },
   "author": "Jack Preston <unwttng@gmail.com>",
   "devDependencies": {

@@ -50,10 +50,12 @@ class PaletteText extends React.Component {
           type='text'
           className={css.userInput}
           placeholder={`Enter your Twitter username`} />
+        {hasText ?
         <button
           disabled={!hasText}
           className={css.publishButton}
           onClick={this.onPublish.bind(this)}>Publish</button>
+        : null}
         <button
           className={css.restartButton}
           onClick={this.onRestart.bind(this)}>Restart</button>
