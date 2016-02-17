@@ -1,7 +1,6 @@
 .link {
   text-decoration: none;
   color: inherit;
-  padding-bottom: 3px;
 }
 
 .highlight {
@@ -20,6 +19,5 @@
 }
 @media only screen and (max-device-width: 604px) and (orientation: portrait), only screen and (max-device-width: 604px) and (orientation: landscape) {
   .link {
-
   }
 }
