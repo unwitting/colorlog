@@ -6,7 +6,17 @@ class PaletteColorChooser extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = {hex: null, text: null}
+    this.state = {hex: null, text: null, initialRandomHex: this.getRandomColor()}
+  }
+
+  getRandomColor() {
+    let col = '#'
+    let chars = '0123456789ABCDEF'
+    for (let i = 0; i < 6; i++) {
+      const char = chars.charAt(Math.floor(Math.random() * chars.length))
+      col = `${col}${char}`
+    }
+    return col
   }
 
   onHexChange(e) {
@@ -39,16 +49,17 @@ class PaletteColorChooser extends React.Component {
     const hasValidColor = !!this.state.hex && (
       !!this.state.hex.match(/^#[0-9a-fA-F]{3}$/) || !!this.state.hex.match(/^#[0-9a-fA-F]{6}$/)
     )
+    const demoCol = hasValidColor ? this.state.hex : this.state.initialRandomHex
     return (
       <div className={css.paletteColorChooser}>
-        <div className={css.demo} style={{backgroundColor: `${this.state.hex}`}} />
+        <div className={css.demo} style={{backgroundColor: demoCol}} />
         <div className={css.explainer}>Add Color</div>
         <div className={css.inputWrapper}>
           <input
             value={this.state.hex}
             type='text'
             className={`${css.hexInput} ${hasValidColor ? '' : css.invalid}`}
-            placeholder='#FFFFFF'
+            placeholder={this.state.initialRandomHex}
             onChange={this.onHexChange.bind(this)} />
         </div>
         <div className={css.inputWrapper}>
