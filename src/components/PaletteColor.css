@@ -19,3 +19,12 @@
   text-align: right;
   flex: 1;
 }
+
+@media only screen and (max-device-width: 604px) and (orientation: portrait), only screen and (max-device-width: 604px) and (orientation: landscape) {
+  .paletteColor.inViewer {
+    flex: 1;
+  }
+  .paletteColor.inEditor {
+    height: 20vh;
+  }
+}

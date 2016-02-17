@@ -1,6 +1,11 @@
 .editor {
   width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+}
+
+@media only screen and (min-device-width: 605px) and (orientation: portrait), only screen and (min-device-width: 605px) and (orientation: landscape) {
+  .editor {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 }

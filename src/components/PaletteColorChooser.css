@@ -1,8 +1,5 @@
 .paletteColorChooser {
-  width: 20%;
-  border-left: 1px solid rgb(200, 200, 200);
   text-align: center;
-  overflow-y: scroll;
 }
 
 .demo {
@@ -11,14 +8,11 @@
 }
 
 .explainer {
-  padding: 2rem;
   box-sizing: border-box;
   font-weight: 200;
 }
 
 .inputWrapper {
-  padding-left: 2rem;
-  padding-right: 2rem;
   width: 100%;
   box-sizing: border-box;
 }
@@ -41,10 +35,44 @@
   height: 15rem;
 }
 .saveButton {
-  margin-bottom: 2rem;
   background-color: white;
 }
 
 .invalid {
   border-right: 3px solid red;
+}
+
+@media only screen and (max-device-width: 604px) and (orientation: portrait), only screen and (max-device-width: 604px) and (orientation: landscape) {
+  .paletteColorChooser {
+    width: 100%;
+  }
+  .inputWrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .explainer {
+    padding: 1rem;
+  }
+  .saveButton {
+    margin-bottom: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+@media only screen and (min-device-width: 605px) and (orientation: portrait), only screen and (min-device-width: 605px) and (orientation: landscape) {
+  .paletteColorChooser {
+    width: 20%;
+    border-left: 1px solid rgb(200, 200, 200);
+    overflow-y: scroll;
+  }
+  .inputWrapper {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .explainer {
+    padding: 2rem;
+  }
+  .saveButton {
+    margin-bottom: 2rem;
+  }
 }

@@ -1,9 +1,9 @@
 .intro {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 3rem;
 }
 
 .paragraph {
@@ -16,4 +16,15 @@
 
 .fade {
   color: rgb(200, 200, 200);
+}
+
+@media only screen and (min-device-width: 605px) and (orientation: portrait), only screen and (min-device-width: 605px) and (orientation: landscape) {
+  .intro {
+    flex: 1;
+  }
+}
+@media only screen and (max-device-width: 604px) and (orientation: portrait), only screen and (max-device-width: 604px) and (orientation: landscape) {
+  .intro {
+    height: 60vh;
+  }
 }

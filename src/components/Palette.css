@@ -1,6 +1,19 @@
 .palette {
-  flex: 1;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
-  width: 100%;
+}
+
+@media only screen and (min-device-width: 605px) and (orientation: portrait), only screen and (min-device-width: 605px) and (orientation: landscape) {
+  .palette {
+    flex: 1;
+  }
+}
+@media only screen and (max-device-width: 604px) and (orientation: portrait), only screen and (max-device-width: 604px) and (orientation: landscape) {
+  .palette {
+    flex-direction: column;
+  }
+  .palette.inViewer {
+    height: 100vh;
+  }
 }

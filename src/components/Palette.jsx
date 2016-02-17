@@ -16,11 +16,11 @@ class Palette extends React.Component {
   render() {
     const colors = this.state.colors;
     return (
-      <div className={css.palette}>
+      <div className={`${css.palette} ${!!this.props.editor ? css.inEditor: css.inViewer}`}>
         {!colors || colors.length == 0 ?
           <Intro />
         :
-          colors.map(color => <PaletteColor key={color.hex} {...color} />)
+          colors.map(color => <PaletteColor key={color.hex} {...color} inEditor={!!this.props.editor} />)
         }
         {this.props.editable && colors.length < 5 ? <PaletteColorChooser editor={this.props.editor} /> : null}
       </div>

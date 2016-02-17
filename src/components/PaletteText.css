@@ -18,13 +18,27 @@
   background-color: white;
 }
 
-.textInput {
-  width: 25rem;
-}
-.userInput {
-  width: 25rem;
-}
-
 .invalid {
   border-right: 3px solid red;
+}
+
+@media only screen and (min-device-width: 605px) and (orientation: portrait), only screen and (min-device-width: 605px) and (orientation: landscape) {
+  .textInput, .userInput {
+    width: 25rem;
+  }
+}
+@media only screen and (max-device-width: 604px) and (orientation: portrait), only screen and (max-device-width: 604px) and (orientation: landscape) {
+  .paletteText {
+    padding: 1rem;
+  }
+  .textInput, .userInput, .publishButton {
+    margin-bottom: 0.5rem;
+  }
+  .textInput, .userInput, .publishButton, .restartButton {
+    width: 100%;
+  }
+  .publishButton, .restartButton {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }
