@@ -12,3 +12,14 @@
   padding-right: 2em;
   border-bottom: 1px solid currentColor;
 }
+
+@media only screen and (min-device-width: 605px) and (orientation: portrait), only screen and (min-device-width: 605px) and (orientation: landscape) {
+  .link {
+    padding-bottom: 3px;
+  }
+}
+@media only screen and (max-device-width: 604px) and (orientation: portrait), only screen and (max-device-width: 604px) and (orientation: landscape) {
+  .link {
+
+  }
+}
